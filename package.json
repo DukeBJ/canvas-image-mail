@@ -1,0 +1,30 @@
+{
+  "name": "canvas-image-mail",
+  "version": "0.0.1",
+  "description": "Custom canvas block convert to image and send to mail",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "serve": "cross-env NODE_ENV=development webpack serve --mode development"
+  },
+  "author": "Belousov Maxim (BJ)",
+  "license": "ISC",
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.7",
+    "normalize-scss": "^7.0.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.1",
+    "html-loader": "^1.3.2",
+    "html-webpack-plugin": "^4.5.1",
+    "mini-css-extract-plugin": "^1.3.5",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
+    "webpack": "^5.18.0",
+    "webpack-cli": "^4.4.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

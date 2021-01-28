@@ -7,11 +7,59 @@
 </head>
 <body>
   <h1>Convas</h1>
-  <h2>rrrr</h2>
-  <a id="link">Скачать</a>
-  <h3>ttttttttttttttttt</h3>
-  <div id="capture" style="padding: 10px; background: #f5da55">
-    <h4 style="color: #000; ">Hello world!</h4>
+  <form id="setData">
+    <div class="input-area">
+      <label for="setData__photo">Фото</label>
+      <input type="file" name="photo" id="setData__photo">
+    </div>
+    <div class="input-area">
+      <label for="setData__fio">ФИО</label>
+      <input type="text" name="name" id="setData__fio">
+    </div>
+    <div class="input-area">
+      <label for="setData__function">Должность</label>
+      <input type="text" name="function" id="setData__function">
+    </div>
+    <div class="input-area">
+      <label for="setData__department">Отдел</label>
+      <input type="text" name="department" id="setData__department">
+    </div>
+    <div class="input-area">
+      <label for="setData__email">Email</label>
+      <input type="email" name="email" id="setData__email">
+    </div>
+    <div class="input-area">
+      <label for="setData__phone">Стационарный телефон</label>
+      <input type="tel" name="phone" id="setData__phone">
+    </div>
+    <div class="input-area">
+      <label for="setData__mobile">Мобильный телефон</label>
+      <input type="tel" name="mobile" id="setData__mobile">
+    </div>
+  </form>
+  <div id="capture">
+    <div class="card-body">
+      <div class="logo">
+        <img height="30px" width="109px" src="./assets/images/logo.svg" alt="logo">
+      </div>
+      <div class="header">Уважаемые коллеги!</div>
+      <div class="hello">Рады сообщить, что к&nbsp;нашей Компании присоединился новый сотрудник,&nbsp;&mdash; <span>Королева Ольга Владимировна</span>.</div>
+      <div class="personal-card">
+        <div class="personal-card__photo">
+          <img src="./assets/images/photo.jpg" alt="photo">
+        </div>
+        <div class="personal-card__info">
+          <div class="function">Должность: <span>Менеджер по управлению персоналом</span></div>
+          <div class="department">Отдел: <span>Управление персоналом</span></div>
+          <div class="email">Email: <span>mail@plastika-okon.ru</span></div>
+          <div class="phone">Тел.: <span>+7 (999) 999-99-99</span></div>
+          <div class="mobile">Моб.: <span>+7 (999) 999-99-99</span></div>
+        </div>
+      </div>
+      <div class="great">
+        От&nbsp;лица всего коллектива Компании выражаем готовность оказать новому сотруднику всестороннюю помощь в&nbsp;решении возможных вопросов и&nbsp;желаем успехов в&nbsp;работе!
+      </div>
+    </div>
   </div>
 </body>
 </html>

@@ -1,4 +1,82 @@
 body {
+  padding: 15px;
   color: $bg-color;
   background-color: black;
+  font-family: sans-serif;
+  letter-spacing: -.05em;
+  font-size: 18px;
+}
+
+#capture {
+  background-color: #595959;
+  color: white;
+  width: 740px;
+  display: block;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  .card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      margin-bottom: 40px;
+    }
+
+    .header {
+      font-weight: 800;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hello {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 40px;
+      line-height: 30px;
+
+      span {
+        font-weight: 600;
+        white-space: nowrap;
+      }
+    }
+
+    .personal-card {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin-bottom: 40px;
+      line-height: 30px;
+
+      .personal-card__photo {
+        width: 170px;
+        height: auto;
+
+        img {
+          object-fit: cover;
+        }
+      }
+
+      .personal-card__info {
+        width: calc(100% - 170px);
+        padding-left: 20px;
+
+        div {
+          margin-bottom: 10px;
+
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .great {
+      line-height: 30px;
+      font-size: 24px;
+    }
+  }
 }

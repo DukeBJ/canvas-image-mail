@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
@@ -13,7 +14,8 @@ module.exports = {
   entry: ['./assets/js/main.js', './assets/scss/main.scss', './index.html'],
   output: {
     filename: `./js/${filename('js')}`,
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: ''
   },
   devServer: {
     historyApiFallback: true,
@@ -35,12 +37,25 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `./css/${filename('css')}`
     }),
+    new copyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/images'),
+          to: path.resolve(__dirname, 'dist/images')
+        } 
+      ]
+    })
   ],
   module: {
     rules: [
       {
         test: /\.html$/i,
-        use: 'html-loader'
+        use: [
+          {
+            loader: 'html-loader',
+            options: {}
+          }
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -49,6 +64,17 @@ module.exports = {
           loader: MiniCssExtractPlugin.loader,
           options: {}
         }, 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(?:|jpg|jpeg|gif|png|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: `./images/${filename('[ext]')}`
+            }
+          }
+        ],
       }
     ]
   }

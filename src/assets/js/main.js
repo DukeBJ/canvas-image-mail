@@ -46,6 +46,11 @@ const mobileMask = IMask(
     mask: '+{7} (000) 000-00-00'
 });
 
+const tmpPhoto = form.getElementById('setData__photo').files[0];
+
+const blob = window.URL.createObjectURL(tmpPhoto);
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
   bfi_init({

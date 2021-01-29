@@ -1,1 +1,18 @@
-$bg-color: green;
+$bg-color: #fff;
+$bg-card: #595959;
+$text-card: #fff;
+
+$plskyblue: #33C5F3;
+$plskyblue_d: darken($plskyblue, 10%); 
+$plblue: #0057FF;
+$plyellow: #FFA800;
+$plmagenta: #F333BD;
+$plcarmin: #F34A33;
+$plcarmin_d: darken($plcarmin, 10%);
+$plgrey: #99A0A6;
+$pllightgrey: #F2F2F2;
+$plantracit: #111516;
+$pldarkgreen:#05252F;
+$pldarkgreen70: #50666D;
+$plblindblue: #76ABBB;
+$plshadow: transparentize($pldarkgreen, .88);

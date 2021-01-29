@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>convas</title>
+  <title>Рассылка о новом сотруднике</title>
+  <link rel="stylesheet" href="https://plastika-okon.ru/local/assets/fonts/geometria_mail/stylesheet.css">
 </head>
 <body>
-  <h1>Convas</h1>
+  
+  <h1>Рассылка о новом сотруднике</h1>
+  
   <form id="setData">
     <div class="input-area">
       <label for="setData__photo">Фото</label>
-      <input type="file" name="photo" id="setData__photo">
+      <input class="bfi" type="file" name="photo" id="setData__photo">
     </div>
     <div class="input-area">
       <label for="setData__fio">ФИО</label>
@@ -30,20 +33,29 @@
     </div>
     <div class="input-area">
       <label for="setData__phone">Стационарный телефон</label>
-      <input type="tel" name="phone" id="setData__phone">
+      <div class="phone-block">
+        <input type="tel" name="phone" placeholder="+7" id="setData__phone">
+        <div class="additional-phone">
+          <label for="setData__phoneAdd">доб.</label>
+          <input type="number" name="phone-add" id="setData__phoneAdd">
+        </div>
+      </div>
     </div>
     <div class="input-area">
       <label for="setData__mobile">Мобильный телефон</label>
-      <input type="tel" name="mobile" id="setData__mobile">
+      <input class="phone-input" placeholder="+7" type="tel" name="mobile" id="setData__mobile">
     </div>
   </form>
+
+  <h2>Превью письма</h2>
+  
   <div id="capture">
     <div class="card-body">
       <div class="logo">
         <img height="30px" width="109px" src="./assets/images/logo.svg" alt="logo">
       </div>
       <div class="header">Уважаемые коллеги!</div>
-      <div class="hello">Рады сообщить, что к&nbsp;нашей Компании присоединился новый сотрудник,&nbsp;&mdash; <span>Королева Ольга Владимировна</span>.</div>
+      <div class="hello">Рады сообщить, что к&nbsp;нашей Компании присоединился новый сотрудник,&nbsp;&mdash; <span class="set-name">Королева Ольга Владимировна</span>.</div>
       <div class="personal-card">
         <div class="personal-card__photo">
           <img src="./assets/images/photo.jpg" alt="photo">
@@ -61,5 +73,6 @@
       </div>
     </div>
   </div>
+  
 </body>
 </html>

@@ -1,0 +1,106 @@
+#setData {
+  margin-bottom: 50px;
+  width: 600px;
+
+  .input-area {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    label {
+      margin-bottom: 10px;
+
+      &.bfi-label {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  input {
+    resize: none;
+    border: 1px solid $plantracit;
+    border-radius: 10px;
+    padding: 10px;
+    // width: 100%;
+    color: $plantracit;
+  }
+  
+  .phone-block {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+  
+    #setData__phone {
+      width: 50%;
+    }
+  
+    .additional-phone {
+      width: 50%;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: baseline;
+  
+      label {
+        margin-bottom: 0;
+        width: 60px;
+      }
+
+      input {
+        width: calc(100% - 70px);
+      }
+    }
+  }
+}
+
+.btn {
+  font-weight: 500;
+  padding: 11px 30px 10px;
+  line-height: 1.4;
+  border-radius: 10px;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  transition: all .3s ease-in-out;
+
+  &.btn__blue {
+    color: white;
+    background-color: $plskyblue;
+    border: 2px solid $plskyblue;
+
+    &:focus, &:hover {
+      background-color: $plskyblue_d;
+      border-color: $plskyblue_d;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &.btn__red {
+    color: white;
+    background-color: $plcarmin;
+    border: 2px solid $plcarmin;
+
+    &:focus, &:hover {
+      background-color: $plcarmin_d;
+      border-color: $plcarmin_d;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &.btn__min-width {
+    min-width: 200px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

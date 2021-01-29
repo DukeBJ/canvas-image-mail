@@ -1,15 +1,15 @@
 body {
   padding: 15px;
-  color: $bg-color;
-  background-color: black;
-  font-family: sans-serif;
-  letter-spacing: -.05em;
+  color: $plantracit;
+  background-color: $bg-color;
+  font-family: 'Geometria', sans-serif;
+  letter-spacing: -.01em;
   font-size: 18px;
 }
 
 #capture {
-  background-color: #595959;
-  color: white;
+  background-color: $bg-card;
+  color: $text-card;
   width: 740px;
   display: block;
   padding-left: 120px;
@@ -30,6 +30,7 @@ body {
       font-weight: 800;
       font-size: 48px;
       margin-bottom: 20px;
+      letter-spacing: -.04em;
     }
 
     .hello {
@@ -37,6 +38,7 @@ body {
       font-weight: 400;
       margin-bottom: 40px;
       line-height: 30px;
+      letter-spacing: -.02em;
 
       span {
         font-weight: 600;
@@ -77,6 +79,7 @@ body {
     .great {
       line-height: 30px;
       font-size: 24px;
+      letter-spacing: -.02em;
     }
   }
 }

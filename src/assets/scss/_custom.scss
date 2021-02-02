@@ -7,6 +7,10 @@ body {
   font-size: 18px;
 }
 
+.hidden {
+  display: none;
+}
+
 #capture {
   background-color: $bg-card;
   color: $text-card;
@@ -59,6 +63,7 @@ body {
 
         img {
           object-fit: cover;
+          max-width: 170px;
         }
       }
 
@@ -72,6 +77,10 @@ body {
           span {
             font-weight: 600;
           }
+        }
+
+        .phone .phone__additional {
+          padding-left: 8px;
         }
       }
     }

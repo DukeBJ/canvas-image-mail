@@ -37,7 +37,7 @@
         <input type="tel" name="phone" placeholder="+7" id="setData__phone">
         <div class="additional-phone">
           <label for="setData__phoneAdd">доб.</label>
-          <input type="number" name="phone-add" id="setData__phoneAdd">
+          <input type="tel" name="phone-add" id="setData__phoneAdd">
         </div>
       </div>
     </div>
@@ -47,6 +47,10 @@
     </div>
   </form>
 
+  <!-- <a data-micromodal-trigger="modal-1" id="preview" href='javascript:;'>Open Modal Dialog</a> -->
+
+  <button id="sendImg">Отправить</button>
+
   <h2>Превью письма</h2>
   
   <div id="capture">
@@ -55,21 +59,44 @@
         <img height="30px" width="109px" src="./assets/images/logo.svg" alt="logo">
       </div>
       <div class="header">Уважаемые коллеги!</div>
-      <div class="hello">Рады сообщить, что к&nbsp;нашей Компании присоединился новый сотрудник,&nbsp;&mdash; <span class="set-name">Королева Ольга Владимировна</span>.</div>
+      <div class="hello">Рады сообщить, что к&nbsp;нашей Компании присоединился новый сотрудник,&nbsp;&mdash; <span class="set-name">Имя Фамилия</span>.</div>
       <div class="personal-card">
         <div class="personal-card__photo">
           <img src="./assets/images/photo.jpg" alt="photo">
         </div>
         <div class="personal-card__info">
-          <div class="function">Должность: <span>Менеджер по управлению персоналом</span></div>
-          <div class="department">Отдел: <span>Управление персоналом</span></div>
-          <div class="email">Email: <span>mail@plastika-okon.ru</span></div>
-          <div class="phone">Тел.: <span>+7 (999) 999-99-99</span></div>
-          <div class="mobile">Моб.: <span>+7 (999) 999-99-99</span></div>
+          <div class="function">Должность: <span>Должность нового сотрудника</span></div>
+          <div class="department hidden">Отдел: <span>Управление персоналом</span></div>
+          <div class="email hidden">Email: <span>mail@plastika-okon.ru</span></div>
+          <div class="phone hidden">Тел.: <span class="phone__main">+7 (999) 999-99-99</span><span class="phone__additional hidden">доб. <span>9999</span></span></div>
+          <div class="mobile hidden">Моб.: <span>+7 (999) 999-99-99</span></div>
         </div>
       </div>
       <div class="great">
         От&nbsp;лица всего коллектива Компании выражаем готовность оказать новому сотруднику всестороннюю помощь в&nbsp;решении возможных вопросов и&nbsp;желаем успехов в&nbsp;работе!
+      </div>
+    </div>
+  </div>
+
+  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-title">
+            Micromodal
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          
+          <!-- <p>
+            Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also, <code>esc</code> to close modal.
+          </p> -->
+        </main>
+        <footer class="modal__footer">
+          <button class="modal__btn modal__btn-primary">Continue</button>
+          <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+        </footer>
       </div>
     </div>
   </div>

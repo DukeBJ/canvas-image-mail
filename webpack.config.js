@@ -12,6 +12,9 @@ const filename = (ext) => isDev ? `[name].${ext}` : `[name].[contenthash].${ext}
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: ['./assets/js/main.js', './assets/scss/main.scss', './index.html'],
+  // optimization: {
+  //   minimize: false
+  // },
   output: {
     filename: `./js/${filename('js')}`,
     path: path.resolve(__dirname, 'dist'),

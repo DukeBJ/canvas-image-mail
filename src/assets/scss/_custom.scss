@@ -1,15 +1,20 @@
 body {
   padding: 15px;
+  // padding-bottom: 0;
   color: $plantracit;
-  background-color: $bg-color;
+  background-color: #f00;//$bg-color;
   font-family: 'Geometria', sans-serif;
   letter-spacing: -.01em;
   font-size: 18px;
 }
 
-.hidden {
-  display: none;
+.canvas {
+  background-color: $bg-card;
 }
+
+// .hidden {
+//   display: none;
+// }
 
 #capture {
   background-color: $bg-card;
@@ -22,6 +27,8 @@ body {
   padding-bottom: 70px;
 
   .card-body {
+    // margin-top: 70px;
+    // margin-bottom: 70px;
     width: 100%;
     display: flex;
     flex-direction: column;

@@ -13,7 +13,8 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: ['./assets/js/main.js', './assets/scss/main.scss', './index.html'],
   // optimization: {
-  //   minimize: false
+  //   minimize: false,
+  //   removeComments: true,
   // },
   output: {
     filename: `./js/${filename('js')}`,
@@ -45,9 +46,21 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/assets/images'),
           to: path.resolve(__dirname, 'dist/images')
-        } 
+        },
+        {
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'dist/favicon.ico')
+        },
+        {
+          from: path.resolve(__dirname, 'src/mail.php'),
+          to: path.resolve(__dirname, 'dist/mail.php')
+        },
       ]
-    })
+    }),
+    // new webpack.SourceMapDevToolPlugin({
+    //   filename: '[name].[contenthash].js.map',
+    //   exclude: ['vendor.js']
+    // })
   ],
   module: {
     rules: [
@@ -56,7 +69,10 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: {}
+            options: {
+              minimize: false,
+              //removeComments: true,
+            }
           }
         ]
       },
@@ -69,7 +85,12 @@ module.exports = {
         }, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(?:|jpg|jpeg|gif|png|svg)$/,
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        use: ['babel-loader']
+      },
+      {
+        test: /\.(?:|jpg|jpeg|gif|png|svg)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -78,6 +99,18 @@ module.exports = {
             }
           }
         ],
+      },
+      {
+        test: /\.(?:|woff)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: `fonts/[name].[ext]`,
+              publicPath: "../",
+            }
+          }
+        ]
       }
     ]
   }

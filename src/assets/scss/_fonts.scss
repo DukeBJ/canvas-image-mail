@@ -1,0 +1,129 @@
+// @include font-fase(Geometria, fonts/geometria)
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria Thin'), local('Geometria-Thin'),
+		url('../fonts/geometria_mail/Geometria-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria MediumItalic'), local('Geometria-MediumItalic'),
+		url('../fonts/geometria_mail/Geometria-MediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria Italic'), local('Geometria-Italic'),
+		url('../fonts/geometria_mail/Geometria-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria Heavy'), local('Geometria-Heavy'),
+		url('../fonts/geometria_mail/Geometria-Heavy.woff') format('woff');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria ExtraBoldItalic'), local('Geometria-ExtraBoldItalic'),
+		url('../fonts/geometria_mail/Geometria-ExtraBoldItalic.woff') format('woff');
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria Medium'), local('Geometria-Medium'),
+		url('../fonts/geometria_mail/Geometria-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria BoldItalic'), local('Geometria-BoldItalic'),
+		url('../fonts/geometria_mail/Geometria-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria LightItalic'), local('Geometria-LightItalic'),
+		url('../fonts/geometria_mail/Geometria-LightItalic.woff') format('woff');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria HeavyItalic'), local('Geometria-HeavyItalic'),
+		url('../fonts/geometria_mail/Geometria-HeavyItalic.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria'),
+		url('../fonts/geometria_mail/Geometria.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria Bold'), local('Geometria-Bold'),
+		url('../fonts/geometria_mail/Geometria-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria ExtraBold'), local('Geometria-ExtraBold'),
+		url('../fonts/geometria_mail/Geometria-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria ThinItalic'), local('Geometria-ThinItalic'),
+		url('../fonts/geometria_mail/Geometria-ThinItalic.woff') format('woff');
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria ExtraLightItalic'), local('Geometria-ExtraLightItalic'),
+		url('../fonts/geometria_mail/Geometria-ExtraLightItalic.woff') format('woff');
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria Light'), local('Geometria-Light'),
+		url('../fonts/geometria_mail/Geometria-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geometria';
+	src: local('Geometria ExtraLight'), local('Geometria-ExtraLight'),
+		url('../fonts/geometria_mail/Geometria-ExtraLight.woff') format('woff');
+	font-weight: 200;
+	font-style: normal;
+}

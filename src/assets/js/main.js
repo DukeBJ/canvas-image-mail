@@ -1,11 +1,13 @@
 import html2canvas from 'html2canvas';
 import bfi from 'better-file-input';
 import IMask from 'imask';
-import MicroModal from 'micromodal';
+// import MicroModal from 'micromodal';
 
 
 const form = document.querySelector('#setData');
 const capture = document.querySelector('#capture');
+const canvasBlock = document.querySelector('.canvas-img');
+const saveImg = document.querySelector('#saveImg');
 
 const fio = form.querySelector('#setData__fio');
 const workFunc = form.querySelector('#setData__function');
@@ -76,6 +78,35 @@ photo.oninput = function() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  saveImg.addEventListener('click', () => {
+    // window.scrollTo(0, 0);
+    console.log('Скачать картинку')
+
+    // if(document.querySelector('.canvas-img canvas')) {
+    //   document.querySelector('.canvas-img canvas').remove();
+    // }
+
+    html2canvas(
+      capture, { scrollY: (window.pageYOffset * -1), backgroundColor: '#595959' },
+      document.querySelector("#capture"),
+      )
+      .then(canvas => {
+        canvasBlock.appendChild(canvas);
+        const cnvs = document.querySelector('canvas');
+        
+        // canvas.toBlob((blob) => {
+        //   let url = URL.createObjectURL(blob);
+        //   document.location = url;
+        // });
+
+        // const base = cnvs.toDataURL();
+        // document.location = base;
+        // saveImg.href = base;
+        // saveImg.setAttribute(download, `new_coop_${Date.now()}.png`);
+      });
+
+  });
+
   // bfi_init({
   //   'containerColor': '#b8bfd8', // The color of the file container
   //   'labelColor': 'rgb(77, 79, 86)',                    // The color of the file container label
@@ -106,47 +137,68 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
   // const mailSender = './mail.php';
 
-  document.querySelector('#sendImg').addEventListener('click', () => {
+  // document.querySelector('#sendImg').addEventListener('click', () => {
 
-    let base = null
-    console.log('click')
-    html2canvas(
-      capture, { scrollY: (window.pageYOffset * -1) },
-      document.querySelector("#capture")
-      )
-      .then(canvas => {
-        document.body.appendChild(canvas);
-        const cnvs = document.querySelector('canvas');
-        base = cnvs.toDataURL();
-        console.log('canvas', base);
+  //   let base = null
+  //   console.log('click')
+  //   html2canvas(
+  //     capture, { scrollY: (window.pageYOffset * -1) },
+  //     document.querySelector("#capture")
+  //     )
+  //     .then(canvas => {
+  //       document.body.appendChild(canvas);
+  //       const cnvs = document.querySelector('canvas');
+  //       base = cnvs.toDataURL();
+  //       console.log('canvas', base);
 
-        postData('./mail.php', { img: base })
-        .then((data) => {
-          console.log('postData', data); // JSON data parsed by `response.json()` call
-        });
-      });
+  //       postData('./mail.php', { img: base })
+  //       .then((data) => {
+  //         console.log('postData', data); // JSON data parsed by `response.json()` call
+  //       });
+  //     });
 
-  });
+  // });
 
   // MicroModal.init();
 
 })
 
-async function postData(url = '', data = {}) {
-  // debugger;
-  // Default options are marked with *
-  const response = await fetch(url, {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: 'cors', // no-cors, *cors, same-origin
-    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'same-origin', // include, *same-origin, omit
-    headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: 'follow', // manual, *follow, error
-    referrerPolicy: 'no-referrer', // no-referrer, *client
-    body: JSON.stringify(data) // body data type must match "Content-Type" header
-  });
-  return await response.text(); // parses JSON response into native JavaScript objects
-}
+// async function postData(url = '', data = {}) {
+//   // debugger;
+//   // Default options are marked with *
+//   const response = await fetch(url, {
+//     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+//     mode: 'cors', // no-cors, *cors, same-origin
+//     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+//     credentials: 'same-origin', // include, *same-origin, omit
+//     headers: {
+//       'Content-Type': 'application/json'
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     redirect: 'follow', // manual, *follow, error
+//     referrerPolicy: 'no-referrer', // no-referrer, *client
+//     body: JSON.stringify(data) // body data type must match "Content-Type" header
+//   });
+//   return await response.text(); // parses JSON response into native JavaScript objects
+// }
+
+
+var saveData = (function () {
+  var a = document.createElement("a");
+  document.body.appendChild(a);
+  a.style = "display: none";
+  return function (data, fileName) {
+      var json = JSON.stringify(data),
+          blob = new Blob([json], {type: "octet/stream"}),
+          url = window.URL.createObjectURL(blob);
+      a.href = url;
+      a.download = fileName;
+      a.click();
+      window.URL.revokeObjectURL(url);
+  };
+}());
+
+var data = { x: 42, s: "hello, world", d: new Date() },
+  fileName = "my-download.json";
+
+// saveData(data, fileName);

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Рассылка о новом сотруднике</title>
-  <link rel="stylesheet" href="https://plastika-okon.ru/local/assets/fonts/geometria_mail/stylesheet.css">
+  <!-- <link rel="stylesheet" href="/fonts/geometria_mail/stylesheet.css"> -->
 </head>
 <body>
   
@@ -48,8 +48,7 @@
   </form>
 
   <!-- <a data-micromodal-trigger="modal-1" id="preview" href='javascript:;'>Open Modal Dialog</a> -->
-
-  <button id="sendImg">Отправить</button>
+  <input type="button" value="Сохранить картинку" class="btn btn_blue btn_min-width" id="saveImg">
 
   <h2>Превью письма</h2>
   
@@ -78,7 +77,7 @@
     </div>
   </div>
 
-  <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+  <!-- <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
         <header class="modal__header">
@@ -89,9 +88,9 @@
         </header>
         <main class="modal__content" id="modal-1-content">
           
-          <!-- <p>
+          <p>
             Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also, <code>esc</code> to close modal.
-          </p> -->
+          </p>
         </main>
         <footer class="modal__footer">
           <button class="modal__btn modal__btn-primary">Continue</button>
@@ -99,7 +98,9 @@
         </footer>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <div class="hidden canvas-img"></div>
   
 </body>
 </html>

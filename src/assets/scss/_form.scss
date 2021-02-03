@@ -68,7 +68,7 @@
   width: 100%;
   transition: all .3s ease-in-out;
 
-  &.btn__blue {
+  &.btn_blue {
     color: white;
     background-color: $plskyblue;
     border: 2px solid $plskyblue;
@@ -80,7 +80,7 @@
     }
   }
 
-  &.btn__red {
+  &.btn_red {
     color: white;
     background-color: $plcarmin;
     border: 2px solid $plcarmin;
@@ -97,10 +97,10 @@
     cursor: not-allowed;
   }
 
-  &.btn__min-width {
+  &.btn_min-width {
     min-width: 200px;
     width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
   }
 }

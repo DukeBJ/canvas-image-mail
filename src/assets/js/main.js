@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.scrollTo(0, 0);
     console.log('Скачать картинку')
 
-    // if(document.querySelector('.canvas-img canvas')) {
-    //   document.querySelector('.canvas-img canvas').remove();
-    // }
+    if(document.querySelector('.canvas-img canvas')) {
+      document.querySelector('.canvas-img canvas').remove();
+    }
 
     html2canvas(
       capture, { scrollY: (window.pageYOffset * -1), backgroundColor: '#595959' },
@@ -94,10 +94,21 @@ document.addEventListener("DOMContentLoaded", () => {
         canvasBlock.appendChild(canvas);
         const cnvs = document.querySelector('canvas');
         
-        // canvas.toBlob((blob) => {
-        //   let url = URL.createObjectURL(blob);
-        //   document.location = url;
-        // });
+        canvas.toBlob((blob) => {
+          const a = document.createElement("a");
+          document.body.appendChild(a);
+          a.style = "display: none";
+          const name = fio.value.replace(/ /g, '_');
+          const fileName = `${name}_${Date.now()}.png`;
+          const url = URL.createObjectURL(blob);
+          a.href = url;
+          a.download = fileName;
+          a.click();
+          window.URL.revokeObjectURL(url);
+        });
+
+
+        
 
         // const base = cnvs.toDataURL();
         // document.location = base;
@@ -181,24 +192,3 @@ document.addEventListener("DOMContentLoaded", () => {
 //   });
 //   return await response.text(); // parses JSON response into native JavaScript objects
 // }
-
-
-var saveData = (function () {
-  var a = document.createElement("a");
-  document.body.appendChild(a);
-  a.style = "display: none";
-  return function (data, fileName) {
-      var json = JSON.stringify(data),
-          blob = new Blob([json], {type: "octet/stream"}),
-          url = window.URL.createObjectURL(blob);
-      a.href = url;
-      a.download = fileName;
-      a.click();
-      window.URL.revokeObjectURL(url);
-  };
-}());
-
-var data = { x: 42, s: "hello, world", d: new Date() },
-  fileName = "my-download.json";
-
-// saveData(data, fileName);

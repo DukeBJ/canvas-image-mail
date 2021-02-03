@@ -2,7 +2,7 @@ body {
   padding: 15px;
   // padding-bottom: 0;
   color: $plantracit;
-  background-color: #f00;//$bg-color;
+  background-color: $bg-color;
   font-family: 'Geometria', sans-serif;
   letter-spacing: -.01em;
   font-size: 18px;
@@ -12,9 +12,9 @@ body {
   background-color: $bg-card;
 }
 
-// .hidden {
-//   display: none;
-// }
+.hidden {
+  display: none;
+}
 
 #capture {
   background-color: $bg-card;

@@ -3,102 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Рассылка о новом сотруднике</title>
+  <title>Сроки готовности</title>
   <!-- <link rel="stylesheet" href="/fonts/geometria_mail/stylesheet.css"> -->
 </head>
 <body>
   
-  <h1>Рассылка о новом сотруднике</h1>
-  
-  <form id="setData">
-    <div class="input-area">
-      <label for="setData__photo">Фото</label>
-      <input class="bfi" type="file" name="photo" id="setData__photo">
-    </div>
-    <div class="input-area">
-      <label for="setData__fio">ФИО</label>
-      <input type="text" name="name" id="setData__fio">
-    </div>
-    <div class="input-area">
-      <label for="setData__function">Должность</label>
-      <input type="text" name="function" id="setData__function">
-    </div>
-    <div class="input-area">
-      <label for="setData__department">Отдел</label>
-      <input type="text" name="department" id="setData__department">
-    </div>
-    <div class="input-area">
-      <label for="setData__email">Email</label>
-      <input type="email" name="email" id="setData__email">
-    </div>
-    <div class="input-area">
-      <label for="setData__phone">Стационарный телефон</label>
-      <div class="phone-block">
-        <input type="tel" name="phone" placeholder="+7" id="setData__phone">
-        <div class="additional-phone">
-          <label for="setData__phoneAdd">доб.</label>
-          <input type="tel" name="phone-add" id="setData__phoneAdd">
-        </div>
-      </div>
-    </div>
-    <div class="input-area">
-      <label for="setData__mobile">Мобильный телефон</label>
-      <input class="phone-input" placeholder="+7" type="tel" name="mobile" id="setData__mobile">
-    </div>
-  </form>
-
-  <!-- <a data-micromodal-trigger="modal-1" id="preview" href='javascript:;'>Open Modal Dialog</a> -->
-  <input type="button" value="Сохранить картинку" class="btn btn_blue btn_min-width" id="saveImg">
-
-  <h2>Превью письма</h2>
+  <h2>Превью баннера</h2>
   
   <div id="capture">
-    <div class="card-body">
-      <div class="logo">
-        <img height="30px" width="109px" src="./assets/images/logo.svg" alt="logo">
-      </div>
-      <div class="header">Уважаемые коллеги!</div>
-      <div class="hello">Рады сообщить, что к&nbsp;нашей Компании присоединился новый сотрудник,&nbsp;&mdash; <span class="set-name">Имя Фамилия</span>.</div>
-      <div class="personal-card">
-        <div class="personal-card__photo">
-          <img src="./assets/images/photo.jpg" alt="photo">
+    <div class="banner-filter"></div>
+    <div class="capture-padding">
+      <div class="card-body">
+        <div class="logo">
+          <img height="55px" width="205px" src="./assets/images/logo.svg" alt="logo">
         </div>
-        <div class="personal-card__info">
-          <div class="function">Должность: <span>Должность нового сотрудника</span></div>
-          <div class="department hidden">Отдел: <span>Управление персоналом</span></div>
-          <div class="email hidden">Email: <span>mail@plastika-okon.ru</span></div>
-          <div class="phone hidden">Тел.: <span class="phone__main">+7 (999) 999-99-99</span><span class="phone__additional hidden">доб. <span>9999</span></span></div>
-          <div class="mobile hidden">Моб.: <span>+7 (999) 999-99-99</span></div>
+        <div class="date-info">
+          <div class="header">
+            <div>Готовность заказов</div>
+            <div>от <span class="date-start">--.--.----</span>&nbsp;
+              <span class="hidden">
+                <span class="switch">до</span>&nbsp;
+                <span class="time-start"></span>
+              </span>
+            </div>
+          </div>
+          <div class="when-done">на <span class="date-done">--.--.----</span></div>
+          <div class="great">
+            t.me/plastika_news
+          </div>
         </div>
-      </div>
-      <div class="great">
-        От&nbsp;лица всего коллектива Компании выражаем готовность оказать новому сотруднику всестороннюю помощь в&nbsp;решении возможных вопросов и&nbsp;желаем успехов в&nbsp;работе!
       </div>
     </div>
   </div>
 
-  <!-- <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-        <header class="modal__header">
-          <h2 class="modal__title" id="modal-1-title">
-            Micromodal
-          </h2>
-          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-        </header>
-        <main class="modal__content" id="modal-1-content">
-          
-          <p>
-            Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also, <code>esc</code> to close modal.
-          </p>
-        </main>
-        <footer class="modal__footer">
-          <button class="modal__btn modal__btn-primary">Continue</button>
-          <button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
-        </footer>
+  <h2>Задать сроки готовности</h2>
+  
+  <form id="setData">
+    <div class="input-area">
+      <label for="setData__dateStart">Дата принятия заказа</label>
+      <input type="date" name="date-statr" id="setData__dateStart">
+    </div>
+    <div class="input-area">
+      <label for="setData__timeStart">Время</label>
+
+      <div class="time-area">
+        <div class="switch-field">
+          <input type="radio" id="radio-brfore" name="timeSwitcher" value="before" checked/>
+          <label for="radio-brfore">До</label>
+          <input type="radio" id="radio-after" name="timeSwitcher" value="after" />
+          <label for="radio-after">После</label>
+        </div>
+        
+        <input type="time" name="time-statr" id="setData__timeStart">
       </div>
     </div>
-  </div> -->
+    <div class="input-area">
+      <label for="setData__dateDone">Дата готовности</label>
+      <input type="date" name="date-end" id="setData__dateDone">
+    </div>
+  </form>
+
+  <input type="button" value="Сохранить картинку" class="btn btn_blue btn_min-width" id="saveImg">
 
   <div class="hidden canvas-img"></div>
   

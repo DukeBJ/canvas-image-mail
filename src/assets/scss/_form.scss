@@ -104,3 +104,63 @@
     // margin-right: auto;
   }
 }
+
+.switch-field {
+	display: flex;
+	// margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: $bg-color;
+	color: $plskyblue;
+	font-weight: 500;
+  padding: 11px 30px 10px;
+  line-height: 1.4;
+  font-size: 18px;
+	text-align: center;
+	margin-right: -2px;
+	border: 2px solid $plskyblue;
+	transition: all .3s ease-in-out;
+  margin-bottom: 0!important;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+	background-color: $plskyblue;
+  color: $text-card;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 10px 0 0 10px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 10px 10px 0;
+}
+
+.time-area {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+
+  .switch-field {
+    width: 240px;
+  }
+
+  #setData__timeStart {
+    width: calc(100% - 240px);
+  }
+}

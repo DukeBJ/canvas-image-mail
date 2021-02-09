@@ -15,7 +15,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none!important;
 }
 
 #capture {
@@ -25,7 +25,8 @@ body {
   position: relative;
   height: 1080px;
   width: 1080px;
-  background-position: top left;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
 
   .capture-padding {
@@ -44,8 +45,6 @@ body {
   }
 
   .card-body {
-    // margin-top: 70px;
-    // margin-bottom: 70px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -63,7 +62,7 @@ body {
       font-size: 50px;
       margin-bottom: 30px;
       letter-spacing: -.04em;
-      text-shadow: -2px 2px 0px $plshadow;
+      text-shadow: 2px 2px 0px $plshadow;
     }
 
     .hello {

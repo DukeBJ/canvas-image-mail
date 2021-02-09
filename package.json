@@ -15,7 +15,8 @@
     "html2canvas": "^1.0.0-rc.7",
     "imask": "^6.0.5",
     "micromodal": "^0.4.6",
-    "normalize-scss": "^7.0.1"
+    "normalize-scss": "^7.0.1",
+    "unsplash-js": "^7.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

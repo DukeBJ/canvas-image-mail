@@ -1,20 +1,63 @@
 import html2canvas from 'html2canvas';
-// import IMask from 'imask';
-// import MicroModal from 'micromodal';
+import { createApi } from "unsplash-js";
 
+import myKey from './key';
+
+const api = createApi({
+  accessKey: myKey.key
+});
 
 const form = document.querySelector('#setData');
 const capture = document.querySelector('#capture');
 const canvasBlock = document.querySelector('.canvas-img');
 const saveImg = document.querySelector('#saveImg');
+const reloadImg = document.querySelector('#reloadImg');
+
+const loader = document.querySelector('.loader');
 
 const dateStart = form.querySelector('#setData__dateStart');
 const timeStart = form.querySelector('#setData__timeStart');
 const timeSwitcher = form.querySelectorAll('input[name=timeSwitcher]');
 const dateDone = form.querySelector('#setData__dateDone');
 
-capture.style.backgroundImage = "url('./images/random/800-1.png')";
 capture.querySelector('.banner-filter').style.backgroundImage = "url('./images/filter.png')";
+
+const getUnsplashImg = () => {
+  loader.classList.remove('hidden');
+  api.photos
+  .getRandom({ query: "nature", collections: "327760" })
+  .then(result => {
+    console.log('Получаем url картинки');
+    const imgUrl = result.response.urls.full;
+    changeToBase(imgUrl);
+    // capture.style.backgroundImage = `url("${result.response.urls.full}")`;
+  })
+  .catch(() => {
+    console.log("something went wrong!");
+  });
+}
+
+getUnsplashImg();
+
+const changeToBase = (img) => {
+  fetch(img)
+    .then(function (response) {
+      console.log('Конвертим в blob')
+      return response.blob();
+    })
+    .then(function (blob) {
+      console.log('Конвертим в base')
+      const render  = new FileReader()
+
+      render.readAsDataURL(blob)
+      render.onload = () => {
+        capture.style.backgroundImage = `url("${render.result}")`;
+        loader.classList.add('hidden');
+      }
+    });
+  }
+
+
 
 
 dateStart.oninput = function() {
@@ -49,6 +92,8 @@ dateDone.oninput = function() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  reloadImg.addEventListener('click', getUnsplashImg);
 
   saveImg.addEventListener('click', () => {
     // window.scrollTo(0, 0);

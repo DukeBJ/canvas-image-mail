@@ -7,10 +7,12 @@
   <!-- <link rel="stylesheet" href="/fonts/geometria_mail/stylesheet.css"> -->
 </head>
 <body>
-  
   <h2>Превью баннера</h2>
   
   <div id="capture">
+    <div class="loader hidden">
+      <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
     <div class="banner-filter"></div>
     <div class="capture-padding">
       <div class="card-body">
@@ -35,6 +37,8 @@
       </div>
     </div>
   </div>
+  <div style="margin-bottom: 30px;"></div>
+  <input type="button" value="Сменить фон" class="btn btn_blue btn_min-width" id="reloadImg">
 
   <h2>Задать сроки готовности</h2>
   

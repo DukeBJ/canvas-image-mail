@@ -2,6 +2,7 @@ import html2canvas from 'html2canvas';
 import bfi from 'better-file-input';
 import IMask from 'imask';
 // import MicroModal from 'micromodal';
+import { ImageCompressor } from 'image-compressor';
 
 
 const form = document.querySelector('#setData');
@@ -63,6 +64,22 @@ const mobileMask = IMask(
     mask: '+{7} (000) 000-00-00'
 });
 
+const imageCompressor = new ImageCompressor;
+    
+const compressorSettings = {
+        // toWidth : 300,
+        toHeight : 600,
+        mimeType : 'image/png',
+        mode : 'strict',
+        quality : 0.6,
+        grayScale : true,
+        // sepia : true,
+        // threshold : 127,
+        // vReverse : true,
+        // hReverse : true,
+        speed : 'low'
+    };
+
 photo.oninput = function() {
   const reader = new FileReader()
   const tmpPhoto = photo.files[0];
@@ -70,6 +87,27 @@ photo.oninput = function() {
   reader.onloadend = function() {
     const base64data = reader.result;
     capture.querySelector('.personal-card__photo img').src = base64data;
+    
+    const decode = atob(base64data.split(',')[1]);
+    const size = decode.length;
+    
+    const newimg = document.createElement('img');
+    document.body.appendChild(newimg);
+    newimg.src = base64data;
+    newimg.alt = size;
+
+    // Конвертим картинку с заданными опциями
+    imageCompressor.run(base64data, compressorSettings, proceedCompressedImage);
+
+    // Что делаем с конвертированным изображением
+    function proceedCompressedImage (compressedSrc) {
+      const newimg = document.createElement('img');
+      document.body.appendChild(newimg);
+      newimg.src = compressedSrc;
+      const decode = atob(compressedSrc.split(',')[1]);
+      const size = decode.length;
+      newimg.alt = size;
+    }
   }
   // const blob = URL.createObjectURL(tmpPhoto);
 

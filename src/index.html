@@ -20,16 +20,27 @@
           <img height="55px" width="205px" src="./assets/images/logo.svg" alt="logo">
         </div>
         <div class="date-info">
-          <div class="header">
-            <div>Готовность заказов</div>
-            <div>от <span class="date-start">--.--.----</span>&nbsp;
-              <span class="hidden">
-                <span class="switch">до</span>&nbsp;
-                <span class="time-start"></span>
-              </span>
+          <div class="before">
+            <div class="header">
+              <div>Готовность заказов, принятых</div>
+              <div><span class="date-start">--.--.----</span>&nbsp;
+                <span class="switch hidden">
+                  до&nbsp;<span class="time-start">--:--</span>
+                </span>
+              </div>
             </div>
+            <div class="when-done">на <span class="date-done-before">--.--.----</span></div>
           </div>
-          <div class="when-done">на <span class="date-done">--.--.----</span></div>
+          <div class="after hidden">
+            <div class="header">
+              <div>
+                <span class="switch">после</span>&nbsp;
+                <span class="time-start">--:--</span>&nbsp;&mdash;
+              </div>
+            </div>
+            <div class="when-done">на <span class="date-done-after">--.--.----</span></div>
+          </div>
+
           <div class="great">
             t.me/plastika_news
           </div>
@@ -50,7 +61,9 @@
     <div class="input-area">
       <label for="setData__timeStart">Время</label>
 
-      <div class="time-area">
+      <input type="time" name="time-statr" id="setData__timeStart">
+
+      <!-- <div class="time-area">
         <div class="switch-field">
           <input type="radio" id="radio-brfore" name="timeSwitcher" value="before" checked/>
           <label for="radio-brfore">До</label>
@@ -59,11 +72,16 @@
         </div>
         
         <input type="time" name="time-statr" id="setData__timeStart">
-      </div>
+      </div> -->
+
     </div>
     <div class="input-area">
-      <label for="setData__dateDone">Дата готовности</label>
-      <input type="date" name="date-end" id="setData__dateDone">
+      <label for="setData__dateDoneBefore">Дата готовности до</label>
+      <input type="date" name="date-end" id="setData__dateDoneBefore">
+    </div>
+    <div class="input-area">
+      <label for="setData__dateDoneAfter">Дата готовности после</label>
+      <input type="date" name="date-end" id="setData__dateDoneAfter">
     </div>
   </form>
 

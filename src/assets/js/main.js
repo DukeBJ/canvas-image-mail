@@ -17,8 +17,9 @@ const loader = document.querySelector('.loader');
 
 const dateStart = form.querySelector('#setData__dateStart');
 const timeStart = form.querySelector('#setData__timeStart');
-const timeSwitcher = form.querySelectorAll('input[name=timeSwitcher]');
-const dateDone = form.querySelector('#setData__dateDone');
+// const timeSwitcher = form.querySelectorAll('input[name=timeSwitcher]');
+const dateDoneBefore = form.querySelector('#setData__dateDoneBefore');
+const dateDoneAfter = form.querySelector('#setData__dateDoneAfter');
 
 capture.querySelector('.banner-filter').style.backgroundImage = "url('./images/filter.png')";
 
@@ -67,28 +68,37 @@ dateStart.oninput = function() {
 }
 
 timeStart.oninput = function() {
-  if(capture.querySelector('.hidden')) {
-    capture.querySelector('.hidden').classList.remove('hidden');
+  if(capture.querySelector('.switch.hidden')) {
+    capture.querySelector('.switch').classList.remove('hidden');
+    capture.querySelector('.after').classList.remove('hidden');
   }
-  capture.querySelector('.time-start').innerText = timeStart.value;
+  capture.querySelectorAll('.time-start').forEach( (el) => {
+    el.innerText = timeStart.value;
+  })
   
 }
 
-timeSwitcher.forEach(radio => {
-  radio.addEventListener('change', el => {
-    const val = el.path[0].value
-    if(val == 'before') {
-      capture.querySelector('.switch').innerText = 'до';
-    } else {
-      capture.querySelector('.switch').innerText = 'после';
-    }
-  })
-});
+// timeSwitcher.forEach(radio => {
+//   radio.addEventListener('change', el => {
+//     const val = el.path[0].value
+//     if(val == 'before') {
+//       capture.querySelector('.switch').innerText = 'до';
+//     } else {
+//       capture.querySelector('.switch').innerText = 'после';
+//     }
+//   })
+// });
 
-dateDone.oninput = function() {
-  const arDate = dateDone.value.split('-');
+dateDoneBefore.oninput = function() {
+  const arDate = dateDoneBefore.value.split('-');
   const strDate = `${arDate[2]}.${arDate[1]}.${arDate[0]}`
-  capture.querySelector('.date-done').innerText = strDate;
+  capture.querySelector('.date-done-before').innerText = strDate;
+}
+
+dateDoneAfter.oninput = function() {
+  const arDate = dateDoneAfter.value.split('-');
+  const strDate = `${arDate[2]}.${arDate[1]}.${arDate[0]}`
+  capture.querySelector('.date-done-after').innerText = strDate;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

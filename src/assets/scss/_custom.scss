@@ -58,11 +58,11 @@ body {
     }
 
     .header {
-      font-weight: 800;
+      font-weight: 600;
       font-size: 50px;
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
       letter-spacing: -.04em;
-      text-shadow: 2px 2px 0px $plshadow;
+      text-shadow: 2px 2px 0px $plshadow50;
     }
 
     .hello {
@@ -114,20 +114,19 @@ body {
     }
 
     .when-done {
-      font-weight: 500;
-      font-size: 60px;
+      font-weight: 900;
+      font-size: 80px;
       margin-bottom: 20px;
       letter-spacing: -.04em;
-      margin-bottom: 140px;
+      margin-bottom: 100px;
+      text-shadow: 2px 2px 0px $plshadow50;
     }
 
     .great {
       line-height: 30px;
       font-size: 24px;
       letter-spacing: -.02em;
-      // position: absolute;
-      // bottom: 120px;
-      // left: 0;
+      margin-top: 140px;
     }
   }
 }

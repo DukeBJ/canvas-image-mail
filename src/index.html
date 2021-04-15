@@ -5,11 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сроки готовности</title>
   <!-- <link rel="stylesheet" href="/fonts/geometria_mail/stylesheet.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css"/> -->
 </head>
 <body>
-  <h2>Превью баннера</h2>
+  <style>
+    .litepicker {
+      transform: translateX(-50%)!important;
+      left: 50%!important;
+    }
+  </style>
+
+  <div style="width: 100%;display: flex;justify-content: center;">
+    <input id="start-date">
+    <input id="end-date">
+  </div>
+
+  <hr>
+
+  <div style="width: 100%;display: flex;justify-content: center;">
+    <span>c&nbsp;</span><div id="check-first" style="border-bottom: 1px dotted brown;cursor: pointer;"></div><span>&nbsp;по&nbsp;</span>
+    <div id="check-end" style="border-bottom: 1px dotted brown;cursor: pointer;"></div>
+  </div>
+
+  <hr>
+
+  <h3 id="daystatrt"></h3>
+  <h3 id="dayend"></h3>
+
+  <div id="date-test"></div>
+
+
+  <!-- <h2>Превью баннера</h2> -->
   
-  <div id="capture">
+  <!-- <div id="capture">
     <div class="loader hidden">
       <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
@@ -47,8 +75,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div style="margin-bottom: 30px;"></div>
+  </div> -->
+  <!-- <div style="margin-bottom: 30px;"></div>
   <input type="button" value="Сменить фон" class="btn btn_blue btn_min-width" id="reloadImg">
 
   <h2>Задать сроки готовности</h2>
@@ -61,7 +89,7 @@
     <div class="input-area">
       <label for="setData__timeStart">Время</label>
 
-      <input type="time" name="time-statr" id="setData__timeStart">
+      <input type="time" name="time-statr" id="setData__timeStart"> -->
 
       <!-- <div class="time-area">
         <div class="switch-field">
@@ -74,7 +102,7 @@
         <input type="time" name="time-statr" id="setData__timeStart">
       </div> -->
 
-    </div>
+    <!-- </div>
     <div class="input-area">
       <label for="setData__dateDoneBefore">Дата готовности до</label>
       <input type="date" name="date-end" id="setData__dateDoneBefore">
@@ -83,11 +111,11 @@
       <label for="setData__dateDoneAfter">Дата готовности после</label>
       <input type="date" name="date-end" id="setData__dateDoneAfter">
     </div>
-  </form>
+  </form> -->
 
-  <input type="button" value="Сохранить картинку" class="btn btn_blue btn_min-width" id="saveImg">
+  <!-- <input type="button" value="Сохранить картинку" class="btn btn_blue btn_min-width" id="saveImg">
 
-  <div class="hidden canvas-img"></div>
+  <div class="hidden canvas-img"></div> -->
   
 </body>
 </html>

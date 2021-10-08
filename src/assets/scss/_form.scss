@@ -92,6 +92,20 @@
     }
   }
 
+  &.btn_line_blue {
+    color: $plskyblue;
+    background-color: #ffffff;
+    border: 2px solid $plskyblue;
+
+    &:focus, &:hover {
+      color: #ffffff;
+      background-color: $plskyblue_d;
+      border-color: $plskyblue_d;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+
   &:disabled {
     opacity: 0.4;
     cursor: not-allowed;
@@ -163,4 +177,11 @@
   #setData__timeStart {
     width: calc(100% - 240px);
   }
+}
+
+.button-block {
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  z-index: 1000;
 }

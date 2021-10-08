@@ -27,20 +27,29 @@
                 <span class="switch hidden">
                   до&nbsp;<span class="time-start">--:--</span>
                 </span>
+                <span class="done-bold">
+                  на&nbsp;<span class="date-done-before">--.--.----</span>
+                </span>
               </div>
             </div>
-            <div class="when-done">на <span class="date-done-before">--.--.----</span></div>
+            <div class="when-done">
+              Доставка на&nbsp;<span class="date-delivery-before">--.--.----</span>
+            </div>
           </div>
           <div class="after hidden">
             <div class="header">
               <div>
-                <span class="switch">после</span>&nbsp;
+                <span class="switch">Готовность после</span>&nbsp;
                 <span class="time-start">--:--</span>&nbsp;&mdash;
+                <span class="done-bold">
+                  на&nbsp;<span class="date-done-after">--.--.----</span>
+                </span>
               </div>
             </div>
-            <div class="when-done">на <span class="date-done-after">--.--.----</span></div>
+            <div class="when-done">
+              Доставка на&nbsp;<span class="date-delivery-after">--.--.----</span>
+            </div>
           </div>
-
           <div class="great">
             t.me/plastika_news
           </div>
@@ -49,7 +58,6 @@
     </div>
   </div>
   <div style="margin-bottom: 30px;"></div>
-  <input type="button" value="Сменить фон" class="btn btn_blue btn_min-width" id="reloadImg">
 
   <h2>Задать сроки готовности</h2>
   
@@ -83,9 +91,20 @@
       <label for="setData__dateDoneAfter">Дата готовности после</label>
       <input type="date" name="date-end" id="setData__dateDoneAfter">
     </div>
+    <div class="input-area">
+      <label for="setData__dateDeliveryBefore">Дата доставки до</label>
+      <input type="date" name="date-end" id="setData__dateDeliveryBefore">
+    </div>
+    <div class="input-area">
+      <label for="setData__dateDeliveryAfter">Дата доставки после</label>
+      <input type="date" name="date-end" id="setData__dateDeliveryAfter">
+    </div>
   </form>
 
-  <input type="button" value="Сохранить картинку" class="btn btn_blue btn_min-width" id="saveImg">
+  <div class="button-block">
+    <input type="button" value="Сменить фон" class="btn btn_line_blue btn_min-width" id="reloadImg">
+    <input type="button" value="Сохранить картинку" class="btn btn_blue btn_min-width" id="saveImg">
+  </div>
 
   <div class="hidden canvas-img"></div>
   

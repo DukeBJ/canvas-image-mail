@@ -21,6 +21,9 @@ const timeStart = form.querySelector('#setData__timeStart');
 const dateDoneBefore = form.querySelector('#setData__dateDoneBefore');
 const dateDoneAfter = form.querySelector('#setData__dateDoneAfter');
 
+const dateDeliveryBefore = form.querySelector('#setData__dateDeliveryBefore');
+const dateDeliveryAfter = form.querySelector('#setData__dateDeliveryAfter');
+
 capture.querySelector('.banner-filter').style.backgroundImage = "url('./images/filter.png')";
 
 const getUnsplashImg = () => {
@@ -99,6 +102,18 @@ dateDoneAfter.oninput = function() {
   const arDate = dateDoneAfter.value.split('-');
   const strDate = `${arDate[2]}.${arDate[1]}.${arDate[0]}`
   capture.querySelector('.date-done-after').innerText = strDate;
+}
+
+dateDeliveryBefore.oninput = function() {
+  const arDate = dateDeliveryBefore.value.split('-');
+  const strDate = `${arDate[2]}.${arDate[1]}.${arDate[0]}`
+  capture.querySelector('.date-delivery-before').innerText = strDate;
+}
+
+dateDeliveryAfter.oninput = function() {
+  const arDate = dateDeliveryAfter.value.split('-');
+  const strDate = `${arDate[2]}.${arDate[1]}.${arDate[0]}`
+  capture.querySelector('.date-delivery-after').innerText = strDate;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

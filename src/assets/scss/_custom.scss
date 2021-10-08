@@ -113,12 +113,18 @@ body {
       }
     }
 
-    .when-done {
+    .done-bold {
       font-weight: 900;
-      font-size: 80px;
+      letter-spacing: -.04em;
+      text-shadow: 2px 2px 0px $plshadow50;
+    }
+
+    .when-done {
+      font-weight: 700;
+      font-size: 60px;
       margin-bottom: 20px;
       letter-spacing: -.04em;
-      margin-bottom: 100px;
+      margin-bottom: 50px;
       text-shadow: 2px 2px 0px $plshadow50;
     }
 
@@ -126,7 +132,7 @@ body {
       line-height: 30px;
       font-size: 24px;
       letter-spacing: -.02em;
-      margin-top: 140px;
+      margin-top: 100px;
     }
   }
 }
